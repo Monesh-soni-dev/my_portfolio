@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "pages#home"
   get 'resume/print', to: 'pages#resume_pdf', as: :resume_print
+  get 'contact', to: 'contacts#new', as: :contact
+  post 'contact', to: 'contacts#create'
 end

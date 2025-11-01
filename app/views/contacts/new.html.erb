@@ -1,0 +1,49 @@
+<div class="container" style="padding:28px 20px; max-width:900px;">
+  <div class="summary-card contact-form">
+    <h2>Contact me</h2>
+    <p class="muted">Fill in the details and I'll get back to you shortly.</p>
+
+    <% if flash[:notice] %>
+      <div class="flash notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="flash alert"><%= flash[:alert] %></div>
+    <% end %>
+
+    <%= form_with model: @contact, url: contact_path, local: true do |f| %>
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :name, "Full name" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Your name" %>
+          <% if @contact.errors[:name].present? %>
+            <div class="field-error"><%= @contact.errors[:name].join(', ') %></div>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :number, "Phone number" %>
+          <%= f.text_field :number, class: "form-control", placeholder: "+1 555 555 555" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address, "Address" %>
+        <%= f.text_field :address, class: "form-control", placeholder: "City, Country or full address" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "Message" %>
+        <%= f.text_area :description, class: "form-control", rows: 6, placeholder: "Tell me about your project or what you'd like to discuss" %>
+        <% if @contact.errors[:description].present? %>
+          <div class="field-error"><%= @contact.errors[:description].join(', ') %></div>
+        <% end %>
+      </div>
+
+      <div style="margin-top:12px;">
+        <%= f.submit "Send message", class: "btn-primary" %>
+        <a href="<%= root_path %>" class="btn-ghost">Cancel</a>
+      </div>
+    <% end %>
+  </div>
+</div>
