@@ -1,0 +1,9 @@
+You have received a new contact submission:
+
+Name: <%= @contact.name %>
+Phone: <%= @contact.number.presence || '—' %>
+Address: <%= @contact.address.presence || '—' %>
+Received at: <%= @contact.created_at.strftime("%F %T %Z") %>
+
+Message:
+<%= @contact.description %>

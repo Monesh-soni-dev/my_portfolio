@@ -3,145 +3,232 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Monesh Soni — Resume</title>
-    <style>
-      /* Clean, print-optimized styling */
-      :root{--accent:#0ea5e9;--text:#111827;--muted:#6b7280}
-      html,body{margin:0;padding:0;font-family:Helvetica,Arial,sans-serif;color:var(--text)}
-      .page{width:210mm;min-height:297mm;padding:24mm 16mm;background:#fff}
-      .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-      .profile{display:flex;gap:16px;align-items:center}
-      .avatar{width:96px;height:96px;border-radius:8px;background:linear-gradient(135deg,#e6f7fb,#c7f1ff);display:flex;align-items:center;justify-content:center}
-      .name{font-size:22px;font-weight:700}
-      .title{color:var(--accent);font-weight:700}
-      .contact{font-size:13px;color:var(--muted)}
-      .section{margin-top:14px}
-      h3{margin:0 0 8px 0;color:var(--text)}
-      .muted{color:var(--muted);font-size:13px}
-      ul{margin:6px 0 0 18px}
-      .two-col{display:flex;gap:18px}
-      .col{flex:1}
-      .skill-grid{display:flex;flex-wrap:wrap;gap:8px}
-      .skill{background:#f3f4f6;padding:6px 8px;border-radius:6px;font-size:12px}
-      .icons{display:flex;gap:10px;align-items:center}
+    <title>Monesh Soni — Ruby on Rails Developer</title>
 
-      /* Print adjustments */
-      @media print{
-        .page{box-shadow:none;margin:0}
-        a[href]:after{content:none}
+    <style>
+      :root {
+        --accent:#0ea5e9;
+        --text:#111827;
+        --muted:#6b7280;
+      }
+
+      html, body {
+        margin:0; padding:0;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        color:var(--text);
+        background:#f9fafb;
+      }
+
+      .page {
+        width:210mm;
+        min-height:297mm;
+        padding:22mm 18mm;
+        background:white;
+        margin:auto;
+        box-shadow:0 0 15px rgba(0,0,0,0.1);
+      }
+
+      /* Header */
+      .header {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:16px;
+      }
+
+      .profile {
+        display:flex;
+        gap:16px;
+        align-items:center;
+      }
+
+      .avatar {
+        width:90px; height:90px;
+        border-radius:8px;
+        background:linear-gradient(135deg,#e6f7fb,#c7f1ff);
+        display:flex; justify-content:center; align-items:center;
+      }
+
+      .name { font-size:24px; font-weight:800; }
+      .title { font-size:14px; color:var(--accent); font-weight:700; margin-top:2px; }
+
+      .contact { font-size:13px; color:var(--muted); margin-top:6px; }
+
+      .icons a svg { transition:0.2s; }
+      .icons a:hover svg { color:var(--accent); }
+
+      /* Sections */
+      .section { margin-top:22px; }
+      .section h3 {
+        margin:0 0 8px 0;
+        font-size:17px;
+        font-weight:700;
+        border-left:4px solid var(--accent);
+        padding-left:8px;
+      }
+
+      .muted { color:var(--muted); font-size:13px; }
+
+      ul { margin:6px 0 0 20px; }
+
+      /* Two Column Layout */
+      .two-col { display:flex; gap:18px; }
+      .col { flex:1; }
+
+      /* Skills */
+      .skill-grid {
+        display:flex; flex-wrap:wrap;
+        gap:8px; margin-top:6px;
+      }
+      .skill {
+        background:#eef2f6;
+        padding:6px 10px;
+        border-radius:6px;
+        font-size:12px;
+        border:1px solid #e2e8f0;
+      }
+
+      @media print {
+        .page { margin:0; box-shadow:none; }
+        a[href]:after { content:none; }
       }
     </style>
   </head>
+
   <body>
     <div class="page">
+
+      <!-- Header -->
       <div class="header">
         <div class="profile">
-          <div class="avatar" aria-hidden="true">
-            <!-- simple avatar SVG -->
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="avatar">
+            <!-- Avatar SVG -->
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
               <rect width="24" height="24" rx="4" fill="#fff"/>
-              <path d="M12 12a3 3 0 100-6 3 3 0 000 6z" fill="#0ea5e9"/>
-              <path d="M4 20c0-3.3137 2.6863-6 6-6h4c3.3137 0 6 2.6863 6 6v0H4z" fill="#c7f1ff"/>
+              <circle cx="12" cy="9" r="3" fill="#0ea5e9"/>
+              <path d="M4 20c0-3.3 2.7-6 6-6h4c3.3 0 6 2.7 6 6H4z" fill="#c7f1ff"/>
             </svg>
           </div>
+
           <div>
             <div class="name">Monesh Soni</div>
-            <div class="title">Ruby on Rails Developer</div>
-            <div class="contact">Indore, India • <a href="mailto:sonimonesh115@gmail.com">sonimonesh115@gmail.com</a> • <a href="tel:+918717965277">+91 87179 65277</a></div>
+            <div class="title">Ruby on Rails Developer • MVC & Microservices • AWS</div>
+            <div class="contact">
+              Indore, India •
+              <a href="mailto:sonimonesh115@gmail.com">sonimonesh115@gmail.com</a> •
+              <a href="tel:+918717965277">+91 87179 65277</a>
+            </div>
           </div>
         </div>
 
         <div class="icons">
-          <!-- GitHub -->
-          <a href="https://github.com/Moneshsoni" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.398 7.863 10.918.575.105.785-.25.785-.556 0-.274-.01-1.003-.015-1.97-3.2.696-3.878-1.544-3.878-1.544-.523-1.328-1.277-1.682-1.277-1.682-1.044-.714.08-.699.08-.699 1.155.082 1.763 1.186 1.763 1.186 1.026 1.759 2.693 1.251 3.348.957.104-.744.402-1.251.731-1.539-2.554-.29-5.242-1.277-5.242-5.683 0-1.255.448-2.28 1.184-3.086-.119-.29-.513-1.455.112-3.034 0 0 .966-.31 3.164 1.18a11.03 11.03 0 012.88-.387c.977.004 1.962.132 2.88.387 2.196-1.49 3.162-1.18 3.162-1.18.626 1.579.232 2.744.114 3.034.738.806 1.183 1.83 1.183 3.086 0 4.417-2.692 5.388-5.255 5.671.413.355.781 1.06.781 2.137 0 1.543-.014 2.787-.014 3.167 0 .31.208.667.79.553C20.712 21.394 24 17.083 24 12 24 5.648 18.352.5 12 .5z"/></svg>
-          </a>
-          <!-- LinkedIn -->
-          <a href="https://linkedin.com/in/monesh-soni" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.4-2.7 5-2.7C22 7.5 24 10 24 14.7V24h-5v-8.8c0-2.1 0-4.8-3-4.8-3 0-3.5 2.4-3.5 4.6V24H8V8z"/></svg>
-          </a>
+          <a href="https://github.com/Moneshsoni" target="_blank"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9..." /></svg></a>
+          <a href="https://linkedin.com/in/monesh-soni" target="_blank"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98..." /></svg></a>
         </div>
       </div>
 
+      <!-- Summary -->
       <div class="section">
         <h3>Professional Summary</h3>
-        <div class="muted">Software Developer with over 4 years of experience specialising in Ruby on Rails development. Strong knowledge of back-end development principles, MVC, microservices, RESTful APIs, database architecture, and agile workflows.</div>
+        <div class="muted">
+          Ruby on Rails Developer with 4+ years of strong experience in MVC architecture,
+          microservices, RESTful API development, database engineering, and cloud deployment.
+          Skilled in AWS, Docker, and building scalable backend systems with clean, maintainable code.
+          Experience working in agile teams and full-stack environments using Rails + React.
+        </div>
       </div>
 
+      <!-- Experience & Projects -->
       <div class="section two-col">
         <div class="col">
           <h3>Work Experience</h3>
+
           <div class="muted"><strong>Pixoatic IT Solutions Pvt. Ltd.</strong> — Ruby on Rails Developer • 03/2024 – 05/2025</div>
           <ul>
-            <li>Developed and maintained Rails web applications; focused on performance, responsiveness and security.</li>
-            <li>Designed and implemented DB schemas (Postgres, MySQL, SQLite) and RESTful APIs.</li>
-            <li>Collaborated via Git/GitHub; participated in code reviews and agile sprints.</li>
+            <li>Built scalable backend systems using Rails, MVC patterns, and services architecture.</li>
+            <li>Developed & secured REST APIs with authentication (JWT, Devise).</li>
+            <li>Worked with AWS S3, CloudFront & EC2 for deployments and storage.</li>
+            <li>Implemented background jobs (Sidekiq) and caching (Redis).</li>
           </ul>
 
-          <div class="muted" style="margin-top:8px"><strong>BestPeers Infosystem Pvt. Ltd.</strong> — Ruby on Rails Developer • 09/2023 – 02/2024</div>
+          <div class="muted" style="margin-top:10px"><strong>BestPeers Infosystem Pvt. Ltd.</strong> — Rails Developer • 09/2023 – 02/2024</div>
           <ul>
-            <li>Contributed to client-facing Rails applications; integrated front-end features with React.</li>
+            <li>Integrated Rails backend with React-based UI components.</li>
+            <li>Improved API performance by optimizing queries and adding indexes.</li>
           </ul>
 
-          <div class="muted" style="margin-top:8px"><strong>Thoughtwin IT Solutions Pvt. Ltd.</strong> — Junior Software Engineer • 07/2021 – 09/2023</div>
+          <div class="muted" style="margin-top:10px"><strong>Thoughtwin IT Solutions Pvt. Ltd.</strong> — Junior Software Engineer • 07/2021 – 09/2023</div>
           <ul>
-            <li>Assisted development and documentation; worked closely with senior devs to refine architecture.</li>
+            <li>Developed modules and assisted with architecture improvements.</li>
+            <li>Collaborated with senior developers in agile sprint cycles.</li>
           </ul>
         </div>
 
         <div class="col">
           <h3>Key Projects</h3>
+
           <div class="muted"><strong>Thoughtwin Platform</strong> • Aug 2021 – Apr 2022</div>
-          <div class="muted">Company management platform using Rails + MySQL, role-based auth, responsive UI.</div>
+          <div class="muted">Employee/department management platform with role-based authentication (Rails + MySQL).</div>
 
-          <div style="height:8px"></div>
+          <div style="height:10px"></div>
+
           <div class="muted"><strong>uCurate</strong> • May 2022 – Feb 2023</div>
-          <div class="muted">Art marketplace (Rails + Postgres) with AWS S3 image storage.</div>
+          <div class="muted">Art marketplace with PostgreSQL, AWS S3 storage, purchase flow, and admin dashboards.</div>
 
-          <div style="height:8px"></div>
+          <div style="height:10px"></div>
+
           <div class="muted"><strong>Storyboard</strong> • Feb 2023 – Aug 2023</div>
-          <div class="muted">Enterprise audio platform; modules for upload, tagging and distribution.</div>
+          <div class="muted">Enterprise-level audio platform with tagging, distribution, and API integrations.</div>
 
-          <div style="height:8px"></div>
+          <div style="height:10px"></div>
+
           <div class="muted"><strong>Docyt</strong> • Sep 2023 – Feb 2024</div>
-          <div class="muted">Accounting automation, QuickBooks/Xero integrations.</div>
+          <div class="muted">Accounting automation system with QuickBooks & Xero integrations.</div>
+
+          <div style="height:10px"></div>
+
+          <div class="muted"><strong>Food Delivery App</strong> • Mar 2024 – Sep 2024</div>
+          <div class="muted">Rails + React delivery system with Razorpay, Twilio, RBAC, live tracking.</div>
         </div>
       </div>
 
+      <!-- Skills -->
       <div class="section">
         <h3>Technical Skills</h3>
         <div class="skill-grid">
           <div class="skill">Ruby</div>
+          <div class="skill">Ruby on Rails</div>
           <div class="skill">JavaScript</div>
-          <div class="skill">Rails</div>
           <div class="skill">React</div>
-          <div class="skill">RSpec</div>
-          <div class="skill">Postgres</div>
+          <div class="skill">MVC Architecture</div>
+          <div class="skill">Microservices</div>
+          <div class="skill">REST APIs</div>
+          <div class="skill">PostgreSQL</div>
           <div class="skill">MySQL</div>
           <div class="skill">SQLite</div>
           <div class="skill">Docker</div>
           <div class="skill">AWS S3</div>
+          <div class="skill">AWS EC2</div>
+          <div class="skill">Redis</div>
+          <div class="skill">Sidekiq</div>
+          <div class="skill">Git / GitHub</div>
         </div>
       </div>
 
-      <div class="section" style="margin-top:18px">
+      <!-- Education -->
+      <div class="section">
         <h3>Education</h3>
-        <div class="muted"><strong>Bachelor of Engineering (B.E.)</strong> — Swami Vivekanand College of Engineering, Indore • 06/2016 – 08/2020</div>
+        <div class="muted">
+          <strong>Bachelor of Engineering (B.E.)</strong> — Swami Vivekanand College of Engineering, Indore  
+          • 2016 – 2020
+        </div>
       </div>
 
-      <div style="margin-top:20px;font-size:12px;color:var(--muted)">
-        Generated for printing. Save as PDF from your browser's Print dialog.
-      </div>
     </div>
 
     <script>
-      // Auto-trigger print when opened; close the tab after printing (user may cancel print)
-      window.addEventListener('load', function(){
-        try{
-          window.print();
-        }catch(e){}
-      });
-      window.onafterprint = function(){ try{ window.close(); } catch(e){} };
+      window.onload = () => { try{ window.print(); } catch(e){} };
+      window.onafterprint = () => { try{ window.close(); } catch(e){} };
     </script>
   </body>
 </html>

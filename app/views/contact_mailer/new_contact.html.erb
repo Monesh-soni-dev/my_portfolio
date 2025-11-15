@@ -1,0 +1,13 @@
+<p>You have received a new contact submission:</p>
+
+<ul>
+  <li><strong>Name:</strong> <%= @contact.name %></li>
+  <li><strong>Phone:</strong> <%= @contact.number.presence || '—' %></li>
+  <li><strong>Address:</strong> <%= @contact.address.presence || '—' %></li>
+  <li><strong>Received at:</strong> <%= @contact.created_at.strftime("%F %T %Z") %></li>
+</ul>
+
+<p>
+  <strong>Message</strong>
+</p>
+<p><%= simple_format(@contact.description) %></p>

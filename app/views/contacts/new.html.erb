@@ -1,7 +1,7 @@
-<div class="container" style="padding:28px 20px; max-width:900px;">
-  <div class="summary-card contact-form">
-    <h2>Contact me</h2>
-    <p class="muted">Fill in the details and I'll get back to you shortly.</p>
+<div class="contact-wrapper">
+  <div class="contact-card">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-subtitle">Have a project or idea? Let’s build something great together.</p>
 
     <% if flash[:notice] %>
       <div class="flash notice"><%= flash[:notice] %></div>
@@ -11,19 +11,19 @@
       <div class="flash alert"><%= flash[:alert] %></div>
     <% end %>
 
-    <%= form_with model: @contact, url: contact_path, local: true do |f| %>
+    <%= form_with model: @contact, url: contact_path, local: true, class: "contact-form" do |f| %>
       <div class="form-row">
         <div class="form-group">
-          <%= f.label :name, "Full name" %>
-          <%= f.text_field :name, class: "form-control", placeholder: "Your name" %>
+          <%= f.label :name, "Full Name" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "John Doe" %>
           <% if @contact.errors[:name].present? %>
             <div class="field-error"><%= @contact.errors[:name].join(', ') %></div>
           <% end %>
         </div>
 
         <div class="form-group">
-          <%= f.label :number, "Phone number" %>
-          <%= f.text_field :number, class: "form-control", placeholder: "+1 555 555 555" %>
+          <%= f.label :number, "Phone Number" %>
+          <%= f.text_field :number, class: "form-control", placeholder: "+91 98765 43210" %>
         </div>
       </div>
 
@@ -40,10 +40,156 @@
         <% end %>
       </div>
 
-      <div style="margin-top:12px;">
-        <%= f.submit "Send message", class: "btn-primary" %>
-        <a href="<%= root_path %>" class="btn-ghost">Cancel</a>
+      <div class="form-actions">
+        <%= f.submit "Send Message", class: "btn-primary" %>
+        <%= link_to "Cancel", root_path, class: "btn-ghost" %>
       </div>
     <% end %>
   </div>
 </div>
+
+<style>
+/* === Contact Page Styles === */
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: linear-gradient(180deg, #fffef8 0%, #fffaf0 100%);
+  padding: 40px 20px;
+}
+
+.contact-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 700px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #d4a017; /* golden yellow */
+  margin-bottom: 6px;
+}
+
+.contact-subtitle {
+  color: rgba(7, 32, 42, 0.65);
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #07202a;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ffd84d;
+  box-shadow: 0 0 0 0.25rem rgba(255, 216, 77, 0.3);
+  outline: none;
+}
+
+.field-error {
+  color: #a02a2a;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ffd84d, #ffca3a);
+  color: #04293a;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 218, 65, 0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(7, 32, 42, 0.2);
+  color: #04293a;
+  padding: 10px 24px;
+  border-radius: 12px;
+  margin-left: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.flash.notice {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #065f46;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.flash.alert {
+  background: #fff7ed;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .form-row { flex-direction: column; }
+  .contact-card { padding: 28px 20px; }
+}
+</style>

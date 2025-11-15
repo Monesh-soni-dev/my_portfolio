@@ -1,0 +1,187 @@
+<div class="about-wrapper">
+  <!-- 🌟 Hero Section -->
+  <section id="hero-landing" class="about-hero">
+    <div class="summary-card">
+      <h1>👨‍💻 About Me</h1>
+      <p>
+        I’m a passionate <strong>Software Developer</strong> with over <strong>4 years of hands-on experience</strong> 
+        in designing and building scalable applications using <strong>Ruby on Rails</strong>. 
+        I specialize in crafting robust back-end systems, integrating RESTful APIs, and optimizing performance 
+        for high-traffic web applications. My approach is rooted in clean architecture, code reusability, 
+        and agile development practices.
+      </p>
+      <p>
+        Over the years, I’ve contributed to <strong>enterprise-grade platforms</strong>, <strong>marketplaces</strong>, 
+        and <strong>SaaS products</strong> that serve thousands of users daily. 
+        I’m driven by problem-solving, continuous learning, and delivering software that truly makes an impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- 💡 Skills Section -->
+  <section id="skills" class="container resume-section">
+    <h2>🧠 Technical Skills</h2>
+    <p class="muted center-text">A well-balanced blend of backend expertise and modern front-end knowledge.</p>
+
+    <div class="skills-grid">
+      <% skills = [
+        ["Ruby", 95, "Expert"],
+        ["Rails", 95, "Expert"],
+        ["JavaScript", 85, "Advanced"],
+        ["React", 85, "Advanced"],
+        ["PostgreSQL", 88, "Advanced"],
+        ["MySQL", 82, "Advanced"],
+        ["Docker", 72, "Intermediate"],
+        ["AWS S3", 74, "Intermediate"],
+        ["RSpec", 80, "Advanced"],
+        ["DevOps & Infrastructure", 65, "Intermediate"]
+      ] %>
+
+      <% skills.each do |name, percent, level| %>
+        <div class="skill-item">
+          <h4><%= name %></h4>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:<%= percent %>%"></div>
+          </div>
+          <p><%= level %> — <%= percent %>%</p>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <!-- 🎓 Education Section -->
+  <section id="education" class="container resume-section">
+    <h2>🎓 Education</h2>
+    <div class="education-item">
+      <strong>Bachelor of Engineering (B.E.) — Computer Science</strong>
+      <p>Swami Vivekanand College of Engineering, Indore</p>
+      <p class="muted">June 2016 – August 2020</p>
+    </div>
+  </section>
+</div>
+
+<!-- 🌈 CSS Styling -->
+<style>
+.about-wrapper {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #fffef8 0%, #fffaf0 100%);
+  min-height: 100vh;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.summary-card {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(6, 22, 32, 0.08);
+  border: 1px solid rgba(6, 22, 32, 0.06);
+}
+
+.summary-card h1 {
+  font-size: 2.2rem;
+  color: #d4a017;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.summary-card p {
+  color: #043049;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.resume-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.resume-section h2 {
+  color: #d4a017;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.resume-section .muted {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(6, 22, 32, 0.05);
+  border: 1px solid rgba(6, 22, 32, 0.08);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(6, 22, 32, 0.1);
+}
+
+.skill-item h4 {
+  color: #04293a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skill-bar {
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.skill-fill {
+  background: linear-gradient(90deg, #fcd34d, #d4a017);
+  height: 100%;
+  border-radius: 10px;
+}
+
+.skill-item p {
+  color: #043049;
+  font-size: 0.9rem;
+}
+
+.education-item {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(6, 22, 32, 0.05);
+  border: 1px solid rgba(6, 22, 32, 0.08);
+}
+
+.education-item strong {
+  color: #04293a;
+  font-size: 1.1rem;
+}
+
+.education-item p {
+  color: #043049;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .summary-card { padding: 24px; }
+  .summary-card h1 { font-size: 1.8rem; }
+}
+</style>

@@ -7,4 +7,10 @@ class PagesController < ApplicationController
     # Render a self-contained, print-friendly resume view (no application layout)
     render layout: false
   end
+
+  def about
+  end
+
+  def projects
+  end
 end

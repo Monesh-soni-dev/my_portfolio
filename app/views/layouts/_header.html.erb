@@ -1,33 +1,26 @@
 <header class="site-header">
   <div class="topbar">
     <div class="container header-row">
+      <!-- Brand / Logo -->
       <div class="brand">
-        <a href="/" class="brand-link">
+        <%= link_to root_path, class: "brand-link" do %>
           <span class="logo">Monesh Soni</span>
-          <span class="sub">Rails Dev</span>
-        </a>
+          <span class="sub">Full-Stack Rails Developer</span>
+        <% end %>
       </div>
 
+      <!-- Navigation -->
       <nav class="main-nav" aria-label="Primary">
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="<%= resume_print_path %>" target="_blank" rel="noopener">Resume</a>
-        <a class="nav-link" href="#about">About</a>
-  <a class="nav-cta" href="<%= contact_path %>">Contact</a>
+        <ul class="nav-list">
+          <li><%= link_to "Home", root_path, class: "nav-link" %></li>
+          <li><%= link_to "Projects", projects_path, class: "nav-link" %></li>
+          <li><%= link_to "About", about_path, class: "nav-link" %></li>
+          <li>
+            <a href="<%= resume_print_path %>" target="_blank" rel="noopener" class="nav-link">Resume</a>
+          </li>
+        </ul>
+        <%= link_to "Contact", contact_path, class: "nav-cta" %>
       </nav>
-    </div>
-  </div>
-
-  <!-- compact hero placed inside header for a stronger first impression -->
-  <div class="hero compact-hero">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <h1 class="hero-title">Monesh Soni — <span class="highlight">Ruby on Rails Developer</span></h1>
-        <p class="hero-sub">4+ years building robust web applications, APIs and developer tools. Specialised in Rails backends, performant databases and end-to-end product delivery.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#projects">See Projects</a>
-          <a class="btn-ghost" href="<%= contact_path %>">Contact</a>
-        </div>
-      </div>
     </div>
   </div>
 </header>
